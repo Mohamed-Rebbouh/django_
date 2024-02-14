@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Member</title>
+</head>
+<body>
+    {% if data %}
+    <h2>Members</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Famname</th>
+                <th></th>
+                <th>Card Number</th>
+                <th></th>
+                <th>Year</th>
+                <th></th>
+                <th>Birth Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in data %}
+                <tr>
+                    <td>{{ member.name }}</td>
+                    <td></td>
+                    <td>{{ member.famname }}</td>
+                    <td></td>
+                    <td>{{ member.cardnum }}</td>
+                    <td></td>
+                    <td>{{ member.year }}</td>
+                    <td></td>
+                    <td>{{ member.birth }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+
+</body>
+</html>

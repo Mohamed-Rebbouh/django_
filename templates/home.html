@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Buttons</title>
+    <style>
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button onclick="navigateToURL('{% url 'n_add_numbers' %}')">calc</button>
+
+        <script>
+            function navigateToURL(url) {
+                window.location.href = url;
+            }
+        </script>
+        <button onclick="navigateToURL('{% url 'n_add_numbers2' %}')">calc2</button>
+        <button onclick="navigateToURL('{% url 'add_member' %}')">add_member</button>
+        <button onclick="navigateToURL('{% url 'affich_member' %}')">affiche_member</button>
+    </nav>
+</body>
+</html>
