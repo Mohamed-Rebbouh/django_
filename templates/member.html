@@ -7,25 +7,23 @@
 </head>
 <body>
     <h2>Add member</h2>
+    {% if is_edit%}
+    <form method="post" action="{% url 'edit_member' idm%}">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <br>
+        <button type="submit">edit</button>
+    </form>
+
+    {% else%}
     <form method="post" action="{% url 'add_member' %}">
         {% csrf_token %}
-        <label for="name">Name:</label>
-        <input type="text" name="name" required>
-        <br>
-        <label for="famname">FamilyName:</label>
-        <input type="text" name="fname" required>
-        <br>
-        <label for="cardnum">Matricul:</label>
-        <input type="text" name="card" required>
-        <br>
-        <label for="year">StudyYear:</label>
-        <input type="text" name="year" required>
-        <br>
-        <label for="birth">BirthDate:</label>
-        <input type="date" name="birth" required>
+        {{ form.as_p}}
         <br>
         <button type="submit">Add</button>
     </form>
+    {% endif%}
+
 
 </body>
 </html>

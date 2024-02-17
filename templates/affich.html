@@ -20,6 +20,8 @@
                 <th>Year</th>
                 <th></th>
                 <th>Birth Date</th>
+                <th></th>
+                <th>Actions</th> 
             </tr>
         </thead>
         <tbody>
@@ -34,10 +36,27 @@
                     <td>{{ member.year }}</td>
                     <td></td>
                     <td>{{ member.birth }}</td>
+                    <td></td>
+                    <td>
+                        <form action="{% url 'remove_member' member.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Remove</button>
+                        </form>
+                        <form action="{% url 'edit_member' member.id %}" method="get">
+                            <button type="submit">Edit</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    <button onclick="navigateToURL('{% url 'add_member' %}')">add_member</button>
+    <script>
+        function navigateToURL(url) {
+            window.location.href = url;
+        }
+    </script>
+    
 {% endif %}
 
 
