@@ -25,7 +25,7 @@ def add_member(request):
         if form.is_valid():
             form.save()
             return redirect(affich) 
-    form=member_form
+    form=member_form()
     return render(request,'member.html',{'form':form,'is_edit':False})
 
 def affich(request):
