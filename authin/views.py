@@ -10,9 +10,7 @@ def SignIn(request):
         form = SignInForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  
-        else :
-            return redirect('home')  
+            return redirect('login')    
     
     form = SignInForm()
     return render(request, 'signup.html', {'form': form,'is_in':True})
