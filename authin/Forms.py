@@ -13,5 +13,5 @@ class SignInForm(UserCreationForm):
 class LoginForm(ModelForm):
     class Meta:
         model = user_a
-        fields = ['user_name', 'password']
+        fields = ['user_name', 'pass_word']
         
